@@ -1,22 +1,42 @@
 c_files/dwt_prj
 c_files/in_images
 
+
 c_files/out_gold_images
+
 
 c_files/out_images
 
+
 c_files/dwt_prj
+
 c_files/dwt_prj1
+
 c_files/dwt_prj2
+
 c_files/dwt_prj3
+
 c_files/dwt_prj4
+
 c_files/dwt_prj5
+
 c_files/dwt_prj6
+
 c_files/dwt_prj7
+
 c_files/dwt_prj8
+
+other_c_files/dwt_prj
+
+other_c_files/in_images
+
+other_c_files/out_gold_images
+other_c_files/3D_array/dwt2_prj
 mat_files/in_images
 
+
 mat_files/in_images_f
+
 
 mat_files/gold_images
 
