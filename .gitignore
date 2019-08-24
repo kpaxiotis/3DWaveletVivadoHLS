@@ -34,7 +34,7 @@ other_c_files/3D_array/new.dat
 other_c_files/3D_array/out.dat
 other_c_files/3D_array/out.gold.dat
 
-other_c_files/no_dir/in_images
-other_c_files/no_dir/ou_gold_images
 other_c_files/no_dir/dwt_prj
+other_c_files/no_dir/in_images
+other_c_files/no_dir/out_gold_images
 other_c_files/no_dir/in_image.dat
