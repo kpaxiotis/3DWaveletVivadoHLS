@@ -8,8 +8,8 @@ latency_avg = []
 sol_list = []
 
 
-for i in range(1, 9):
-    directory = "dwt_prj",str(i),"/solution1/solution1_data.json"
+for i in range(1, 4):
+    directory = "dwt_prj" + str(i) + "/solution1/solution1_data.json"
     with open(directory) as f:
         data = json.load(f)
     
@@ -20,4 +20,7 @@ for i in range(1, 9):
     #print(solutions[i - 1], data['ModuleInfo']['Metrics']['dwt3D']['Latency']['LatencyAvg'], '\n')
     
 plt.bar(sol_list, latency_avg)
+
+for a,b in zip(sol_list, latency_avg):
+    plt.text(a,b,str(b))
 plt.show()
