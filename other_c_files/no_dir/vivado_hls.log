@@ -1,0 +1,120 @@
+
+****** Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source C:/Xilinx/Vivado/2017.4/scripts/vivado_hls/hls.tcl -notrace
+INFO: [HLS 200-10] Running 'C:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/vivado_hls.exe'
+INFO: [HLS 200-10] For user 'KOSTAS' on host 'desktop-5uaetmh' (Windows NT_amd64 version 6.2) on Tue Jul 09 18:00:59 +0300 2019
+INFO: [HLS 200-10] In directory 'C:/Users/KOSTAS/Documents/1.RADIOELECTROLOGY/Thesis/vivado/c_files/no_dir'
+INFO: [HLS 200-10] Opening and resetting project 'C:/Users/KOSTAS/Documents/1.RADIOELECTROLOGY/Thesis/vivado/c_files/no_dir/dwt.prj'.
+INFO: [HLS 200-10] Adding design file 'dwt.c' to the project
+INFO: [HLS 200-10] Adding test bench file 'dwt_test.c' to the project
+INFO: [HLS 200-10] Adding test bench file 'in_images' to the project
+WARNING: [HLS 200-40] Cannot find test bench file 'out_images'
+INFO: [HLS 200-10] Adding test bench file 'out_gold_images' to the project
+INFO: [HLS 200-10] Opening and resetting solution 'C:/Users/KOSTAS/Documents/1.RADIOELECTROLOGY/Thesis/vivado/c_files/no_dir/dwt.prj/solution1'.
+INFO: [HLS 200-10] Cleaning up the solution database.
+INFO: [HLS 200-10] Setting target device to 'xc7z010clg400-1'
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+   Compiling(apcc) ../../../../dwt_test.c in debug mode
+INFO: [HLS 200-10] Running 'c:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/apcc.exe'
+INFO: [HLS 200-10] For user 'KOSTAS' on host 'desktop-5uaetmh' (Windows NT_amd64 version 6.2) on Tue Jul 09 18:20:46 +0300 2019
+INFO: [HLS 200-10] In directory 'C:/Users/KOSTAS/Documents/1.RADIOELECTROLOGY/Thesis/vivado/c_files/no_dir/dwt.prj/solution1/csim/build'
+INFO: [APCC 202-3] Tmp directory is apcc_db
+INFO: [APCC 202-1] APCC is done.
+   Compiling(apcc) ../../../../dwt.c in debug mode
+INFO: [HLS 200-10] Running 'c:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/apcc.exe'
+INFO: [HLS 200-10] For user 'KOSTAS' on host 'desktop-5uaetmh' (Windows NT_amd64 version 6.2) on Tue Jul 09 18:21:07 +0300 2019
+INFO: [HLS 200-10] In directory 'C:/Users/KOSTAS/Documents/1.RADIOELECTROLOGY/Thesis/vivado/c_files/no_dir/dwt.prj/solution1/csim/build'
+INFO: [APCC 202-3] Tmp directory is apcc_db
+INFO: [APCC 202-1] APCC is done.
+   Generating csim.exe
+*******************************************
+PASS: The output matches the golden output!
+*******************************************
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-10] Analyzing design file 'dwt.c' ...
+INFO: [HLS 200-10] Validating synthesis directives ...
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:03 ; elapsed = 00:20:38 . Memory (MB): peak = 100.281 ; gain = 44.793
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:03 ; elapsed = 00:20:43 . Memory (MB): peak = 100.281 ; gain = 44.793
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:03 ; elapsed = 00:20:45 . Memory (MB): peak = 102.008 ; gain = 46.520
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:03 ; elapsed = 00:20:46 . Memory (MB): peak = 102.223 ; gain = 46.734
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:04 ; elapsed = 00:20:48 . Memory (MB): peak = 122.742 ; gain = 67.254
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:04 ; elapsed = 00:20:51 . Memory (MB): peak = 125.496 ; gain = 70.008
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'dwt3D' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'dwt1D'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 1252.38 seconds; current allocated memory: 85.786 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 1.095 seconds; current allocated memory: 86.087 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'dwt3D'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.746 seconds; current allocated memory: 86.802 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.582 seconds; current allocated memory: 87.390 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dwt1D'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'dwt3D_fptrunc_64ns_32_1_1' to 'dwt3D_fptrunc_64nbkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'dwt3D_fpext_32ns_64_1_1' to 'dwt3D_fpext_32ns_cud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'dwt3D_dadd_64ns_64ns_64_5_full_dsp_1' to 'dwt3D_dadd_64ns_6dEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'dwt3D_dsub_64ns_64ns_64_5_full_dsp_1' to 'dwt3D_dsub_64ns_6eOg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'dwt3D_dmul_64ns_64ns_64_6_max_dsp_1' to 'dwt3D_dmul_64ns_6fYi' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'dwt3D_dadd_64ns_6dEe': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dwt3D_dmul_64ns_6fYi': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dwt3D_dsub_64ns_6eOg': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dwt3D_fpext_32ns_cud': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dwt3D_fptrunc_64nbkb': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dwt1D'.
+INFO: [HLS 200-111]  Elapsed time: 0.936 seconds; current allocated memory: 88.103 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dwt3D'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'dwt3D/in_x_size' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'dwt3D/in_y_size' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'dwt3D/in_z_size' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'dwt3D/in_data3D' to 'bram'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'dwt3D/iterations' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'dwt3D' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dwt3D'.
+INFO: [HLS 200-111]  Elapsed time: 1.189 seconds; current allocated memory: 89.384 MB.
+INFO: [RTMG 210-278] Implementing memory 'dwt1D_temp_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'dwt3D_p_x_data1D_ram (RAM)' using block RAMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:07 ; elapsed = 00:21:06 . Memory (MB): peak = 142.719 ; gain = 87.230
+INFO: [SYSC 207-301] Generating SystemC RTL for dwt3D.
+INFO: [VHDL 208-304] Generating VHDL RTL for dwt3D.
+INFO: [VLOG 209-307] Generating Verilog RTL for dwt3D.
+ERROR: [COSIM 212-41] ../../out_images is not found.
+WARNING: [COSIM 212-42] Please make sure test bench files are set correctly in Vivado HLS project tcl.
+ERROR: [COSIM 212-4] *** C/RTL co-simulation finished: FAIL ***
+3
+    while executing
+"source [lindex $::argv 1] "
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel \#0 { source [lindex $::argv 1] } "
+
+INFO: [HLS 200-112] Total elapsed time: 1266.9 seconds; peak allocated memory: 89.384 MB.
+INFO: [Common 17-206] Exiting vivado_hls at Tue Jul  9 18:22:03 2019...
