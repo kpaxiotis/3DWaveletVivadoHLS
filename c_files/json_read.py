@@ -14,13 +14,14 @@ for i in range(1, 5):
         data = json.load(f)
     
         #data_list.append(int(data['ModuleInfo']['Metrics']['dwt3D']['Latency']['LatencyAvg']))
-        latency_avg.append(int(data['ModuleInfo']['Metrics']['dwt3D']['Latency']['LatencyAvg']))
+    latency_avg.append(int(data['ModuleInfo']['Metrics']['dwt3D']['Latency']['LatencyAvg']))
     sol_list.append("sol" + str(i))
 
     #print(solutions[i - 1], data['ModuleInfo']['Metrics']['dwt3D']['Latency']['LatencyAvg'], '\n')
     
 plt.bar(sol_list, latency_avg)
 
+
 for a,b in zip(sol_list, latency_avg):
-    plt.text(a,b,str(b))
+    plt.text(a,b,str(b) + "__" + str(round((latency_avg[0] - b)/latency_avg[0] * 100, 2))+ "%")
 plt.show()

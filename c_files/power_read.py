@@ -15,9 +15,11 @@ for i in range(1, num_of_prj):
     with open(directory) as myfile:
         power.append(myfile.readlines()[32].split()[6])
         #print (myfile.readlines()[32].split()[6])
-        
+
+power = [float(i) for i in power]        
+
 plt.bar(sol_list, power)
 
 for a,b in zip(sol_list, power):
-    plt.text(a,b,str(b))
+    plt.text(a,b,str(b)+ "__" + str(round((power[0] - b)/power[0] * 100, 2))+ "%")
 plt.show()
