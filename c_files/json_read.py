@@ -8,15 +8,15 @@ latency_avg = []
 sol_list = []
 
 
-for i in range(1, 4):
+for i in range(1, 5):
     directory = "dwt_prj" + str(i) + "/solution1/solution1_data.json"
     with open(directory) as f:
         data = json.load(f)
     
-    #data_list.append(int(data['ModuleInfo']['Metrics']['dwt3D']['Latency']['LatencyAvg']))
-    latency_avg.append(int(data['ModuleInfo']['Metrics']['dwt3D']['Latency']['LatencyAvg']))
+        #data_list.append(int(data['ModuleInfo']['Metrics']['dwt3D']['Latency']['LatencyAvg']))
+        latency_avg.append(int(data['ModuleInfo']['Metrics']['dwt3D']['Latency']['LatencyAvg']))
     sol_list.append("sol" + str(i))
-    
+
     #print(solutions[i - 1], data['ModuleInfo']['Metrics']['dwt3D']['Latency']['LatencyAvg'], '\n')
     
 plt.bar(sol_list, latency_avg)
