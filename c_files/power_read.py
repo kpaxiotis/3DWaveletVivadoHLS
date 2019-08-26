@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-num_of_prj = 3
+num_of_prj = 4
 sol_list = []
 power = []
 
