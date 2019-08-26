@@ -1,4 +1,4 @@
-create_project project1 C:/vThesis/c_files/dwt_prj1/solution1/project1 -part xc7z010clg400-1
+create_project -force project1 C:/vThesis/c_files/dwt_prj1/solution1/project1 -part xc7z010clg400-1
 set_property board_part digilentinc.com:zybo-z7-10:part0:1.0 [current_project]
 set_property target_language VHDL [current_project]
 set_property simulator_language VHDL [current_project]
@@ -35,7 +35,7 @@ wait_on_run impl_1
 
 close_project
 
-create_project project1 C:/vThesis/c_files/dwt_prj2/solution1/project1 -part xc7z010clg400-1
+create_project -force project1 C:/vThesis/c_files/dwt_prj2/solution1/project1 -part xc7z010clg400-1
 set_property board_part digilentinc.com:zybo-z7-10:part0:1.0 [current_project]
 set_property target_language VHDL [current_project]
 set_property simulator_language VHDL [current_project]
@@ -75,7 +75,7 @@ close_project
 
 
 
-create_project project1 C:/vThesis/c_files/dwt_prj3/solution1/project1 -part xc7z010clg400-1
+create_project -force project1 C:/vThesis/c_files/dwt_prj3/solution1/project1 -part xc7z010clg400-1
 set_property board_part digilentinc.com:zybo-z7-10:part0:1.0 [current_project]
 set_property target_language VHDL [current_project]
 set_property simulator_language VHDL [current_project]
@@ -114,7 +114,7 @@ close_project
 
 
 
-create_project project1 C:/vThesis/c_files/dwt_prj4/solution1/project1 -part xc7z010clg400-1
+create_project -force project1 C:/vThesis/c_files/dwt_prj4/solution1/project1 -part xc7z010clg400-1
 set_property board_part digilentinc.com:zybo-z7-10:part0:1.0 [current_project]
 set_property target_language VHDL [current_project]
 set_property simulator_language VHDL [current_project]
