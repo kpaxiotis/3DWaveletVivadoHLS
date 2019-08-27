@@ -105,7 +105,9 @@ void dwt3D(float in[1536]){
                     
                     //printf("out = %f\n%f\n%f\n%f\n", temp->data3D[0][j][k], temp->data3D[1][j][k], temp->data3D[2][j][k], temp->data3D[3][j][k]);
                 }
+                I_I_LOOP:
                 for ( i = x_size - 1; i >= 0; i--){
+                #pragma HLS loop_tripcount min=4 max=128
                     temp->data3D[i][j][k] = tmp[i];
                 }
             }
@@ -129,7 +131,9 @@ void dwt3D(float in[1536]){
                     tmp[j+h] = temp->data3D[i][m][k]*0.5*1.41421356 - temp->data3D[i][m+1][k]*0.5*1.41421356;
                     
                 }
+                J_J_LOOP:
                 for ( j = y_size - 1; j >= 0; j--){
+                #pragma HLS loop_tripcount min=4 max=128
                     temp->data3D[i][j][k] = tmp[j];
                 }                
             }    
@@ -152,7 +156,9 @@ void dwt3D(float in[1536]){
                     tmp[k+h] = temp->data3D[i][j][m]*0.5*1.41421356 - temp->data3D[i][j][m+1]*0.5*1.41421356;
                     
                 }
+                K_K_LOOP:
                 for ( k = z_size - 1; k >= 0; k--){
+                #pragma HLS loop_tripcount min=4 max=128
                     temp->data3D[i][j][k] = tmp[k];
                 }
             }    
