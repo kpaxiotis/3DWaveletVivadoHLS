@@ -3,7 +3,7 @@
 # - assumes the design files are .c (update to .cpp for C++ and SystemC)
 # - assumes test bench is <design>_test.c
 
-DESIGN		 := inverse
+DESIGN		 := single_sub_loops
 SOURCES		 := $(DESIGN).c dwt_test.c
 OBJECTS		 := $(SOURCES:.c=.o)
 INCLUDES		 := image_aux.h image_read.h print3D.h comp_str.h directories_dim.h directories_in.h directories_out.h directories_out_gold_r.h

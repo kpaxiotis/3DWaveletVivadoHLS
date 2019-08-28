@@ -184,4 +184,3 @@ void dwt3D(float in[1536]){
         }
     }
 }
-
