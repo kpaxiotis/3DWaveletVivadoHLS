@@ -29,6 +29,8 @@ c_files/dwt_prj8
 
 c_files/vivado_hls.log
 
+c_files/1dwt_all.tcl
+
 other_c_files/3D_array/dwt2_prj
 other_c_files/3D_array/in_image.dat
 other_c_files/3D_array/new.dat
