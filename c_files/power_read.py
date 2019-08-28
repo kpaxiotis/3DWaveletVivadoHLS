@@ -21,5 +21,5 @@ power = [float(i) for i in power]
 plt.bar(sol_list, power)
 
 for a,b in zip(sol_list, power):
-    plt.text(a,b,str(b)+ "__" + str(round((power[0] - b)/power[0] * 100, 2))+ "%")
+    plt.text(a,b,str(b)+ "__" + str(round((b - power[0])/power[0] * 100, 2))+ "%")
 plt.show()

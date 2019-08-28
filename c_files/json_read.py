@@ -23,5 +23,5 @@ plt.bar(sol_list, latency_avg)
 
 
 for a,b in zip(sol_list, latency_avg):
-    plt.text(a,b,str(b) + "__" + str(round((latency_avg[0] - b)/latency_avg[0] * 100, 2))+ "%")
+    plt.text(a,b,str(b) + "__" + str(round((b - latency_avg[0])/latency_avg[0] * 100, 2))+ "%")
 plt.show()
