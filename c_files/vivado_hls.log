@@ -6,361 +6,192 @@
 
 source C:/Xilinx/Vivado/2017.4/scripts/vivado_hls/hls.tcl -notrace
 INFO: [HLS 200-10] Running 'C:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/vivado_hls.exe'
-INFO: [HLS 200-10] For user 'KOSTAS' on host 'desktop-5uaetmh' (Windows NT_amd64 version 6.2) on Sun Aug 25 21:16:54 +0300 2019
+INFO: [HLS 200-10] For user 'KOSTAS' on host 'desktop-5uaetmh' (Windows NT_amd64 version 6.2) on Wed Aug 28 09:09:30 +0300 2019
 INFO: [HLS 200-10] In directory 'C:/thesisRepo/c_files'
+INFO: [HLS 200-10] Opening and resetting project 'C:/thesisRepo/c_files/dwt_prj1'.
+INFO: [HLS 200-10] Adding design file 'non_var_loops.c' to the project
+INFO: [HLS 200-10] Adding test bench file 'dwt_test.c' to the project
+INFO: [HLS 200-10] Adding test bench file 'in_images' to the project
+INFO: [HLS 200-10] Adding test bench file 'out_images' to the project
+INFO: [HLS 200-10] Adding test bench file 'out_gold_images' to the project
+INFO: [HLS 200-10] Opening and resetting solution 'C:/thesisRepo/c_files/dwt_prj1/solution1'.
+INFO: [HLS 200-10] Cleaning up the solution database.
+INFO: [HLS 200-10] Setting target device to 'xc7z010clg400-1'
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 11ns.
+INFO: [HLS 200-10] Analyzing design file 'non_var_loops.c' ...
+INFO: [HLS 200-10] Validating synthesis directives ...
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:18 . Memory (MB): peak = 99.707 ; gain = 44.191
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:24 . Memory (MB): peak = 99.727 ; gain = 44.211
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:01 ; elapsed = 00:00:26 . Memory (MB): peak = 102.148 ; gain = 46.633
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:01 ; elapsed = 00:00:26 . Memory (MB): peak = 102.363 ; gain = 46.848
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:02 ; elapsed = 00:00:28 . Memory (MB): peak = 124.480 ; gain = 68.965
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:02 ; elapsed = 00:00:29 . Memory (MB): peak = 124.480 ; gain = 68.965
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'dwt3D' ...
+WARNING: [SYN 201-107] Renaming port name 'dwt3D/in' to 'dwt3D/in_r' to avoid the conflict with HDL keywords or other object names.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'dwt3D'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 30.002 seconds; current allocated memory: 78.042 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.645 seconds; current allocated memory: 79.310 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dwt3D'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'dwt3D/in_r' to 'bram'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'dwt3D' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'return' to AXI-Lite port dwt_io.
+INFO: [SYN 201-210] Renamed object name 'dwt3D_fptrunc_64ns_32_1_1' to 'dwt3D_fptrunc_64nbkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'dwt3D_fpext_32ns_64_1_1' to 'dwt3D_fpext_32ns_cud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'dwt3D_dadddsub_64ns_64ns_64_5_full_dsp_1' to 'dwt3D_dadddsub_64dEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'dwt3D_dsub_64ns_64ns_64_5_full_dsp_1' to 'dwt3D_dsub_64ns_6eOg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'dwt3D_dmul_64ns_64ns_64_6_max_dsp_1' to 'dwt3D_dmul_64ns_6fYi' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'dwt3D_dadddsub_64dEe': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dwt3D_dmul_64ns_6fYi': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dwt3D_dsub_64ns_6eOg': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dwt3D_fpext_32ns_cud': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dwt3D_fptrunc_64nbkb': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dwt3D'.
+INFO: [HLS 200-111]  Elapsed time: 0.935 seconds; current allocated memory: 81.608 MB.
+INFO: [RTMG 210-278] Implementing memory 'dwt3D_p_temp_data3D_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'dwt3D_tmp_ram (RAM)' using block RAMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:05 ; elapsed = 00:00:38 . Memory (MB): peak = 136.297 ; gain = 80.781
+INFO: [SYSC 207-301] Generating SystemC RTL for dwt3D.
+INFO: [VHDL 208-304] Generating VHDL RTL for dwt3D.
+INFO: [VLOG 209-307] Generating Verilog RTL for dwt3D.
 INFO: [HLS 200-10] Opening and resetting project 'C:/thesisRepo/c_files/dwt_prj2'.
-INFO: [HLS 200-10] Adding design file 'inverse.c' to the project
+INFO: [HLS 200-10] Adding design file 'non_var_loops.c' to the project
 INFO: [HLS 200-10] Adding test bench file 'dwt_test.c' to the project
 INFO: [HLS 200-10] Adding test bench file 'in_images' to the project
 INFO: [HLS 200-10] Adding test bench file 'out_images' to the project
 INFO: [HLS 200-10] Adding test bench file 'out_gold_images' to the project
 INFO: [HLS 200-10] Opening and resetting solution 'C:/thesisRepo/c_files/dwt_prj2/solution1'.
 INFO: [HLS 200-10] Cleaning up the solution database.
-INFO: [HLS 200-10] Setting target device to 'xc7z010clg400-1'
-INFO: [SYN 201-201] Setting up clock 'default' with a period of 12ns.
-INFO: [HLS 200-10] Analyzing design file 'inverse.c' ...
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 11ns.
+INFO: [HLS 200-10] Analyzing design file 'non_var_loops.c' ...
 INFO: [HLS 200-10] Validating synthesis directives ...
-INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:00 ; elapsed = 00:00:08 . Memory (MB): peak = 99.785 ; gain = 44.082
-INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:00 ; elapsed = 00:00:10 . Memory (MB): peak = 99.805 ; gain = 44.102
+WARNING: [HLS 200-40] Directive 'UNROLL' cannot be applied: Function 'DWT_LEVEL_LOOP' does not exist in any synthesis source file.
+WARNING: [HLS 200-40] Directive 'UNROLL' cannot be applied: Function 'X_J_LOOP' does not exist in any synthesis source file.
+WARNING: [HLS 200-40] Directive 'UNROLL' cannot be applied: Function 'Y_K_LOOP' does not exist in any synthesis source file.
+WARNING: [HLS 200-40] Directive 'UNROLL' cannot be applied: Function 'Z_I_LOOP' does not exist in any synthesis source file.
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:06 ; elapsed = 00:00:46 . Memory (MB): peak = 136.328 ; gain = 80.813
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:06 ; elapsed = 00:00:48 . Memory (MB): peak = 136.328 ; gain = 80.813
 INFO: [HLS 200-10] Starting code transformations ...
-INFO: [XFORM 203-603] Inlining function 'ap_fixed_base<79, 55, false, (ap_q_mode)5, (ap_o_mode)3, 0>::operator<<' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (r:/builds/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/../include/internal/hls_round.h:286).
-INFO: [XFORM 203-603] Inlining function 'ap_fixed_base<1, 32, false, (ap_q_mode)5, (ap_o_mode)0, 0>::overflow_adjust' into 'ap_fixed_base<1, 32, false, (ap_q_mode)5, (ap_o_mode)0, 0>::ap_fixed_base<79, 55, false, (ap_q_mode)5, (ap_o_mode)3, 0>' ().
-INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:01 ; elapsed = 00:00:13 . Memory (MB): peak = 154.367 ; gain = 98.664
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:06 ; elapsed = 00:00:51 . Memory (MB): peak = 136.328 ; gain = 80.813
 INFO: [HLS 200-10] Checking synthesizability ...
-INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::mantissa' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (r:/builds/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/../include/internal/hls_round.h:283) automatically.
-INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::expv' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (r:/builds/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/../include/internal/hls_round.h:286) automatically.
-INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::__signbit' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (r:/builds/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/../include/internal/hls_round.h:318) automatically.
-INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' into 'generic_cast_IEEE754<int, float>' (r:/builds/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/../include/internal/hls_round.h:368) automatically.
-INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<int, float>' into '__hls_fptosi_float_i32' (r:/builds/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:49) automatically.
-INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:02 ; elapsed = 00:00:14 . Memory (MB): peak = 184.914 ; gain = 129.211
-WARNING: [XFORM 203-561] Updating loop lower bound from 1 to 2 for loop 'DWT_LEVEL_LOOP' (inverse.c:81:1) in function 'dwt3D'.
-INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::mantissa' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (r:/builds/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/../include/internal/hls_round.h:283) automatically.
-INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::expv' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (r:/builds/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/../include/internal/hls_round.h:286) automatically.
-INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::__signbit' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (r:/builds/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/../include/internal/hls_round.h:318) automatically.
-INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' into 'generic_cast_IEEE754<int, float>' (r:/builds/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/../include/internal/hls_round.h:368) automatically.
-INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<int, float>' into '__hls_fptosi_float_i32' (r:/builds/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:49) automatically.
-WARNING: [XFORM 203-713] All the elements of global array 'in' (inverse.c:29) should be updated in process function 'Block__proc21' (inverse.c:42:42), otherwise it may not be synthesized correctly.
-INFO: [XFORM 203-712] Applying dataflow to function 'dwt3D' (inverse.c:29), detected/extracted 1 process function(s): 
-	 'Block__proc21'.
-INFO: [XFORM 203-602] Inlining function '__hls_fptosi_float_i32' into 'Block__proc21' (inverse.c:54) automatically.
-INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:03 ; elapsed = 00:00:17 . Memory (MB): peak = 246.215 ; gain = 190.512
-INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'temp' (inverse.c:7) (distance = 1).
-INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:04 ; elapsed = 00:00:19 . Memory (MB): peak = 265.895 ; gain = 210.191
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:06 ; elapsed = 00:00:51 . Memory (MB): peak = 136.328 ; gain = 80.813
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:06 ; elapsed = 00:00:53 . Memory (MB): peak = 144.938 ; gain = 89.422
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:07 ; elapsed = 00:00:54 . Memory (MB): peak = 144.938 ; gain = 89.422
 INFO: [HLS 200-10] Starting hardware synthesis ...
 INFO: [HLS 200-10] Synthesizing 'dwt3D' ...
-WARNING: [SYN 201-103] Legalizing function name 'Block__proc21' to 'Block_proc21'.
 WARNING: [SYN 201-107] Renaming port name 'dwt3D/in' to 'dwt3D/in_r' to avoid the conflict with HDL keywords or other object names.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-42] -- Implementing module 'dwt1D'
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [SCHED 204-61] Pipelining loop 'CALC_LOOP'.
-WARNING: [SCHED 204-68] Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
-   between 'store' operation (inverse.c:17) of variable 'tmp_14', inverse.c:17 on array 'temp', inverse.c:7 and 'store' operation (inverse.c:16) of variable 'tmp_11', inverse.c:16 on array 'temp', inverse.c:7.
-INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 2, Depth = 20.
-INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 19.252 seconds; current allocated memory: 215.785 MB.
-INFO: [BIND 205-100] Starting micro-architecture generation ...
-INFO: [BIND 205-101] Performing variable lifetime analysis.
-INFO: [BIND 205-101] Exploring resource sharing.
-INFO: [BIND 205-101] Binding ...
-INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 0.288 seconds; current allocated memory: 216.082 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-42] -- Implementing module 'Block_proc21'
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 0.534 seconds; current allocated memory: 217.488 MB.
-INFO: [BIND 205-100] Starting micro-architecture generation ...
-INFO: [BIND 205-101] Performing variable lifetime analysis.
-INFO: [BIND 205-101] Exploring resource sharing.
-INFO: [BIND 205-101] Binding ...
-INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 0.671 seconds; current allocated memory: 218.689 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'dwt3D'
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 0.544 seconds; current allocated memory: 218.845 MB.
+INFO: [HLS 200-111]  Elapsed time: 22.636 seconds; current allocated memory: 86.530 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 0.522 seconds; current allocated memory: 218.925 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'dwt1D'
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [SYN 201-210] Renamed object name 'dwt3D_fptrunc_64ns_32_1_1' to 'dwt3D_fptrunc_64nbkb' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'dwt3D_fpext_32ns_64_1_1' to 'dwt3D_fpext_32ns_cud' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'dwt3D_dadddsub_64ns_64ns_64_5_full_dsp_1' to 'dwt3D_dadddsub_64dEe' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'dwt3D_dmul_64ns_64ns_64_5_max_dsp_1' to 'dwt3D_dmul_64ns_6eOg' due to the length limit 20
-INFO: [RTGEN 206-100] Generating core module 'dwt3D_dadddsub_64dEe': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'dwt3D_dmul_64ns_6eOg': 2 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'dwt3D_fpext_32ns_cud': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'dwt3D_fptrunc_64nbkb': 1 instance(s).
-INFO: [RTGEN 206-100] Finished creating RTL model for 'dwt1D'.
-INFO: [HLS 200-111]  Elapsed time: 0.525 seconds; current allocated memory: 219.676 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'Block_proc21'
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [SYN 201-210] Renamed object name 'Block_proc21_p_temp_data3D' to 'Block_proc21_p_tefYi' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'Block_proc21_p_z_data1D' to 'Block_proc21_p_z_g8j' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'Block_proc21_p_y_data1D' to 'Block_proc21_p_y_hbi' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'Block_proc21_p_x_data1D' to 'Block_proc21_p_x_ibs' due to the length limit 20
-WARNING: [RTGEN 206-101] Setting dangling out port 'Block_proc21/in_r_WEN_B' to 0.
-WARNING: [RTGEN 206-101] Setting dangling out port 'Block_proc21/in_r_Din_B' to 0.
-INFO: [RTGEN 206-100] Finished creating RTL model for 'Block_proc21'.
-INFO: [HLS 200-111]  Elapsed time: 0.73 seconds; current allocated memory: 221.866 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.564 seconds; current allocated memory: 87.662 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'dwt3D'
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [RTGEN 206-500] Setting interface mode on port 'dwt3D/in_r' to 'bram'.
 INFO: [RTGEN 206-500] Setting interface mode on function 'dwt3D' to 's_axilite & ap_ctrl_hs'.
 INFO: [RTGEN 206-100] Bundling port 'return' to AXI-Lite port dwt_io.
+INFO: [SYN 201-210] Renamed object name 'dwt3D_fptrunc_64ns_32_1_1' to 'dwt3D_fptrunc_64nbkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'dwt3D_fpext_32ns_64_1_1' to 'dwt3D_fpext_32ns_cud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'dwt3D_dadddsub_64ns_64ns_64_5_full_dsp_1' to 'dwt3D_dadddsub_64dEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'dwt3D_dsub_64ns_64ns_64_5_full_dsp_1' to 'dwt3D_dsub_64ns_6eOg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'dwt3D_dmul_64ns_64ns_64_6_max_dsp_1' to 'dwt3D_dmul_64ns_6fYi' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'dwt3D_dadddsub_64dEe': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dwt3D_dmul_64ns_6fYi': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dwt3D_dsub_64ns_6eOg': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dwt3D_fpext_32ns_cud': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dwt3D_fptrunc_64nbkb': 2 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'dwt3D'.
-INFO: [HLS 200-111]  Elapsed time: 1.844 seconds; current allocated memory: 222.771 MB.
-INFO: [RTMG 210-278] Implementing memory 'dwt1D_temp_ram (RAM)' using distributed RAMs.
-INFO: [RTMG 210-278] Implementing memory 'Block_proc21_p_tefYi_ram (RAM)' using block RAMs.
-INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:08 ; elapsed = 00:00:29 . Memory (MB): peak = 285.668 ; gain = 229.965
+INFO: [HLS 200-111]  Elapsed time: 0.825 seconds; current allocated memory: 89.836 MB.
+INFO: [RTMG 210-278] Implementing memory 'dwt3D_p_temp_data3D_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'dwt3D_tmp_ram (RAM)' using block RAMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:10 ; elapsed = 00:01:02 . Memory (MB): peak = 146.047 ; gain = 90.531
 INFO: [SYSC 207-301] Generating SystemC RTL for dwt3D.
 INFO: [VHDL 208-304] Generating VHDL RTL for dwt3D.
 INFO: [VLOG 209-307] Generating Verilog RTL for dwt3D.
 INFO: [HLS 200-10] Opening and resetting project 'C:/thesisRepo/c_files/dwt_prj3'.
-INFO: [HLS 200-10] Adding design file 'inverse.c' to the project
+INFO: [HLS 200-10] Adding design file 'non_var_loops.c' to the project
 INFO: [HLS 200-10] Adding test bench file 'dwt_test.c' to the project
 INFO: [HLS 200-10] Adding test bench file 'in_images' to the project
 INFO: [HLS 200-10] Adding test bench file 'out_images' to the project
 INFO: [HLS 200-10] Adding test bench file 'out_gold_images' to the project
 INFO: [HLS 200-10] Opening and resetting solution 'C:/thesisRepo/c_files/dwt_prj3/solution1'.
 INFO: [HLS 200-10] Cleaning up the solution database.
-INFO: [SYN 201-201] Setting up clock 'default' with a period of 12ns.
-INFO: [HLS 200-10] Analyzing design file 'inverse.c' ...
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 11ns.
+INFO: [HLS 200-10] Analyzing design file 'non_var_loops.c' ...
 INFO: [HLS 200-10] Validating synthesis directives ...
-INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:09 ; elapsed = 00:00:36 . Memory (MB): peak = 286.012 ; gain = 230.309
-INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:09 ; elapsed = 00:00:38 . Memory (MB): peak = 286.012 ; gain = 230.309
+WARNING: [HLS 200-40] Directive 'UNROLL' cannot be applied: Function 'IN_I_LOOP' does not exist in any synthesis source file.
+WARNING: [HLS 200-40] Directive 'UNROLL' cannot be applied: Function 'DWT_LEVEL_LOOP' does not exist in any synthesis source file.
+WARNING: [HLS 200-40] Directive 'UNROLL' cannot be applied: Function 'X_J_LOOP' does not exist in any synthesis source file.
+WARNING: [HLS 200-40] Directive 'UNROLL' cannot be applied: Function 'Y_K_LOOP' does not exist in any synthesis source file.
+WARNING: [HLS 200-40] Directive 'UNROLL' cannot be applied: Function 'Z_I_LOOP' does not exist in any synthesis source file.
+WARNING: [HLS 200-40] Directive 'UNROLL' cannot be applied: Function 'OUT_I_LOOP' does not exist in any synthesis source file.
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:10 ; elapsed = 00:01:11 . Memory (MB): peak = 146.047 ; gain = 90.531
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:10 ; elapsed = 00:01:13 . Memory (MB): peak = 146.047 ; gain = 90.531
 INFO: [HLS 200-10] Starting code transformations ...
-INFO: [XFORM 203-603] Inlining function 'ap_fixed_base<79, 55, false, (ap_q_mode)5, (ap_o_mode)3, 0>::operator<<' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (r:/builds/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/../include/internal/hls_round.h:286).
-INFO: [XFORM 203-603] Inlining function 'ap_fixed_base<1, 32, false, (ap_q_mode)5, (ap_o_mode)0, 0>::overflow_adjust' into 'ap_fixed_base<1, 32, false, (ap_q_mode)5, (ap_o_mode)0, 0>::ap_fixed_base<79, 55, false, (ap_q_mode)5, (ap_o_mode)3, 0>' ().
-INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:10 ; elapsed = 00:00:42 . Memory (MB): peak = 298.020 ; gain = 242.316
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:10 ; elapsed = 00:01:14 . Memory (MB): peak = 146.047 ; gain = 90.531
 INFO: [HLS 200-10] Checking synthesizability ...
-INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::mantissa' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (r:/builds/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/../include/internal/hls_round.h:283) automatically.
-INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::expv' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (r:/builds/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/../include/internal/hls_round.h:286) automatically.
-INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::__signbit' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (r:/builds/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/../include/internal/hls_round.h:318) automatically.
-INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' into 'generic_cast_IEEE754<int, float>' (r:/builds/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/../include/internal/hls_round.h:368) automatically.
-INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<int, float>' into '__hls_fptosi_float_i32' (r:/builds/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:49) automatically.
-INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:10 ; elapsed = 00:00:42 . Memory (MB): peak = 324.609 ; gain = 268.906
-WARNING: [XFORM 203-561] Updating loop lower bound from 1 to 2 for loop 'DWT_LEVEL_LOOP' (inverse.c:81:1) in function 'dwt3D'.
-INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::mantissa' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (r:/builds/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/../include/internal/hls_round.h:283) automatically.
-INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::expv' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (r:/builds/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/../include/internal/hls_round.h:286) automatically.
-INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::__signbit' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (r:/builds/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/../include/internal/hls_round.h:318) automatically.
-INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' into 'generic_cast_IEEE754<int, float>' (r:/builds/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/../include/internal/hls_round.h:368) automatically.
-INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<int, float>' into '__hls_fptosi_float_i32' (r:/builds/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:49) automatically.
-WARNING: [XFORM 203-713] All the elements of global array 'in' (inverse.c:29) should be updated in process function 'Block__proc21' (inverse.c:42:42), otherwise it may not be synthesized correctly.
-INFO: [XFORM 203-712] Applying dataflow to function 'dwt3D' (inverse.c:29), detected/extracted 1 process function(s): 
-	 'Block__proc21'.
-INFO: [XFORM 203-602] Inlining function '__hls_fptosi_float_i32' into 'Block__proc21' (inverse.c:54) automatically.
-INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:12 ; elapsed = 00:00:45 . Memory (MB): peak = 386.879 ; gain = 331.176
-INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'temp' (inverse.c:7) (distance = 1).
-INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:13 ; elapsed = 00:00:47 . Memory (MB): peak = 406.914 ; gain = 351.211
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:11 ; elapsed = 00:01:14 . Memory (MB): peak = 146.047 ; gain = 90.531
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:11 ; elapsed = 00:01:15 . Memory (MB): peak = 151.590 ; gain = 96.074
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:12 ; elapsed = 00:01:17 . Memory (MB): peak = 151.590 ; gain = 96.074
 INFO: [HLS 200-10] Starting hardware synthesis ...
 INFO: [HLS 200-10] Synthesizing 'dwt3D' ...
-WARNING: [SYN 201-103] Legalizing function name 'Block__proc21' to 'Block_proc21'.
 WARNING: [SYN 201-107] Renaming port name 'dwt3D/in' to 'dwt3D/in_r' to avoid the conflict with HDL keywords or other object names.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-42] -- Implementing module 'dwt1D'
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [SCHED 204-61] Pipelining loop 'CALC_LOOP'.
-INFO: [SCHED 204-61] Pipelining result : Target II = 4, Final II = 4, Depth = 21.
-INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 22.426 seconds; current allocated memory: 339.429 MB.
-INFO: [BIND 205-100] Starting micro-architecture generation ...
-INFO: [BIND 205-101] Performing variable lifetime analysis.
-INFO: [BIND 205-101] Exploring resource sharing.
-INFO: [BIND 205-101] Binding ...
-INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 0.395 seconds; current allocated memory: 339.657 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-42] -- Implementing module 'Block_proc21'
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 0.584 seconds; current allocated memory: 340.828 MB.
-INFO: [BIND 205-100] Starting micro-architecture generation ...
-INFO: [BIND 205-101] Performing variable lifetime analysis.
-INFO: [BIND 205-101] Exploring resource sharing.
-INFO: [BIND 205-101] Binding ...
-INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 0.715 seconds; current allocated memory: 341.962 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'dwt3D'
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 0.605 seconds; current allocated memory: 342.054 MB.
+INFO: [HLS 200-111]  Elapsed time: 21.588 seconds; current allocated memory: 87.942 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 0.579 seconds; current allocated memory: 342.098 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'dwt1D'
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [SYN 201-210] Renamed object name 'dwt3D_fptrunc_64ns_32_1_1' to 'dwt3D_fptrunc_64nbkb' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'dwt3D_fpext_32ns_64_1_1' to 'dwt3D_fpext_32ns_cud' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'dwt3D_dadddsub_64ns_64ns_64_5_full_dsp_1' to 'dwt3D_dadddsub_64dEe' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'dwt3D_dmul_64ns_64ns_64_5_max_dsp_1' to 'dwt3D_dmul_64ns_6eOg' due to the length limit 20
-INFO: [RTGEN 206-100] Generating core module 'dwt3D_dadddsub_64dEe': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'dwt3D_dmul_64ns_6eOg': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'dwt3D_fpext_32ns_cud': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'dwt3D_fptrunc_64nbkb': 1 instance(s).
-INFO: [RTGEN 206-100] Finished creating RTL model for 'dwt1D'.
-INFO: [HLS 200-111]  Elapsed time: 0.523 seconds; current allocated memory: 342.730 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'Block_proc21'
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [SYN 201-210] Renamed object name 'Block_proc21_p_temp_data3D' to 'Block_proc21_p_tefYi' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'Block_proc21_p_z_data1D' to 'Block_proc21_p_z_g8j' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'Block_proc21_p_y_data1D' to 'Block_proc21_p_y_hbi' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'Block_proc21_p_x_data1D' to 'Block_proc21_p_x_ibs' due to the length limit 20
-WARNING: [RTGEN 206-101] Setting dangling out port 'Block_proc21/in_r_WEN_B' to 0.
-WARNING: [RTGEN 206-101] Setting dangling out port 'Block_proc21/in_r_Din_B' to 0.
-INFO: [RTGEN 206-100] Finished creating RTL model for 'Block_proc21'.
-INFO: [HLS 200-111]  Elapsed time: 0.75 seconds; current allocated memory: 344.810 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.565 seconds; current allocated memory: 89.074 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'dwt3D'
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [RTGEN 206-500] Setting interface mode on port 'dwt3D/in_r' to 'bram'.
 INFO: [RTGEN 206-500] Setting interface mode on function 'dwt3D' to 's_axilite & ap_ctrl_hs'.
 INFO: [RTGEN 206-100] Bundling port 'return' to AXI-Lite port dwt_io.
-INFO: [RTGEN 206-100] Finished creating RTL model for 'dwt3D'.
-INFO: [HLS 200-111]  Elapsed time: 1.958 seconds; current allocated memory: 345.425 MB.
-INFO: [RTMG 210-278] Implementing memory 'dwt1D_temp_ram (RAM)' using distributed RAMs.
-INFO: [RTMG 210-278] Implementing memory 'Block_proc21_p_tefYi_ram (RAM)' using block RAMs.
-INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:17 ; elapsed = 00:00:58 . Memory (MB): peak = 417.801 ; gain = 362.098
-INFO: [SYSC 207-301] Generating SystemC RTL for dwt3D.
-INFO: [VHDL 208-304] Generating VHDL RTL for dwt3D.
-INFO: [VLOG 209-307] Generating Verilog RTL for dwt3D.
-INFO: [HLS 200-10] Opening and resetting project 'C:/thesisRepo/c_files/dwt_prj4'.
-INFO: [HLS 200-10] Adding design file 'inverse.c' to the project
-INFO: [HLS 200-10] Adding test bench file 'dwt_test.c' to the project
-INFO: [HLS 200-10] Adding test bench file 'in_images' to the project
-INFO: [HLS 200-10] Adding test bench file 'out_images' to the project
-INFO: [HLS 200-10] Adding test bench file 'out_gold_images' to the project
-INFO: [HLS 200-10] Opening and resetting solution 'C:/thesisRepo/c_files/dwt_prj4/solution1'.
-INFO: [HLS 200-10] Cleaning up the solution database.
-INFO: [SYN 201-201] Setting up clock 'default' with a period of 12ns.
-INFO: [HLS 200-10] Analyzing design file 'inverse.c' ...
-INFO: [HLS 200-10] Validating synthesis directives ...
-INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:17 ; elapsed = 00:01:05 . Memory (MB): peak = 417.801 ; gain = 362.098
-INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:17 ; elapsed = 00:01:07 . Memory (MB): peak = 417.801 ; gain = 362.098
-INFO: [HLS 200-10] Starting code transformations ...
-INFO: [XFORM 203-603] Inlining function 'ap_fixed_base<79, 55, false, (ap_q_mode)5, (ap_o_mode)3, 0>::operator<<' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (r:/builds/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/../include/internal/hls_round.h:286).
-INFO: [XFORM 203-603] Inlining function 'ap_fixed_base<1, 32, false, (ap_q_mode)5, (ap_o_mode)0, 0>::overflow_adjust' into 'ap_fixed_base<1, 32, false, (ap_q_mode)5, (ap_o_mode)0, 0>::ap_fixed_base<79, 55, false, (ap_q_mode)5, (ap_o_mode)3, 0>' ().
-INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:18 ; elapsed = 00:01:10 . Memory (MB): peak = 425.656 ; gain = 369.953
-INFO: [HLS 200-10] Checking synthesizability ...
-INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::mantissa' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (r:/builds/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/../include/internal/hls_round.h:283) automatically.
-INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::expv' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (r:/builds/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/../include/internal/hls_round.h:286) automatically.
-INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::__signbit' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (r:/builds/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/../include/internal/hls_round.h:318) automatically.
-INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' into 'generic_cast_IEEE754<int, float>' (r:/builds/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/../include/internal/hls_round.h:368) automatically.
-INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<int, float>' into '__hls_fptosi_float_i32' (r:/builds/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:49) automatically.
-INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:19 ; elapsed = 00:01:11 . Memory (MB): peak = 452.613 ; gain = 396.910
-WARNING: [XFORM 203-561] Updating loop lower bound from 1 to 2 for loop 'DWT_LEVEL_LOOP' (inverse.c:81:1) in function 'dwt3D'.
-INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::mantissa' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (r:/builds/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/../include/internal/hls_round.h:283) automatically.
-INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::expv' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (r:/builds/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/../include/internal/hls_round.h:286) automatically.
-INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::__signbit' into 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' (r:/builds/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/../include/internal/hls_round.h:318) automatically.
-INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<int, (ap_q_mode)6, float>' into 'generic_cast_IEEE754<int, float>' (r:/builds/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/../include/internal/hls_round.h:368) automatically.
-INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<int, float>' into '__hls_fptosi_float_i32' (r:/builds/2017.4/nightly/2017_12_15_2086221/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:49) automatically.
-WARNING: [XFORM 203-713] All the elements of global array 'in' (inverse.c:29) should be updated in process function 'Block__proc21' (inverse.c:42:42), otherwise it may not be synthesized correctly.
-INFO: [XFORM 203-712] Applying dataflow to function 'dwt3D' (inverse.c:29), detected/extracted 1 process function(s): 
-	 'Block__proc21'.
-INFO: [XFORM 203-602] Inlining function '__hls_fptosi_float_i32' into 'Block__proc21' (inverse.c:54) automatically.
-INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:21 ; elapsed = 00:01:14 . Memory (MB): peak = 508.988 ; gain = 453.285
-INFO: [ANALYSIS 214-51] Found 'RAW' inter dependency for variable 'temp' (inverse.c:7) (distance = 1).
-INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:21 ; elapsed = 00:01:16 . Memory (MB): peak = 527.457 ; gain = 471.754
-INFO: [HLS 200-10] Starting hardware synthesis ...
-INFO: [HLS 200-10] Synthesizing 'dwt3D' ...
-WARNING: [SYN 201-103] Legalizing function name 'Block__proc21' to 'Block_proc21'.
-WARNING: [SYN 201-107] Renaming port name 'dwt3D/in' to 'dwt3D/in_r' to avoid the conflict with HDL keywords or other object names.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-42] -- Implementing module 'dwt1D'
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [SCHED 204-61] Pipelining loop 'CALC_LOOP'.
-INFO: [SCHED 204-61] Pipelining result : Target II = 6, Final II = 6, Depth = 22.
-INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 22.621 seconds; current allocated memory: 448.965 MB.
-INFO: [BIND 205-100] Starting micro-architecture generation ...
-INFO: [BIND 205-101] Performing variable lifetime analysis.
-INFO: [BIND 205-101] Exploring resource sharing.
-INFO: [BIND 205-101] Binding ...
-INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 0.38 seconds; current allocated memory: 449.193 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-42] -- Implementing module 'Block_proc21'
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 0.687 seconds; current allocated memory: 450.364 MB.
-INFO: [BIND 205-100] Starting micro-architecture generation ...
-INFO: [BIND 205-101] Performing variable lifetime analysis.
-INFO: [BIND 205-101] Exploring resource sharing.
-INFO: [BIND 205-101] Binding ...
-INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 0.9 seconds; current allocated memory: 451.498 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-42] -- Implementing module 'dwt3D'
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 0.663 seconds; current allocated memory: 451.553 MB.
-INFO: [BIND 205-100] Starting micro-architecture generation ...
-INFO: [BIND 205-101] Performing variable lifetime analysis.
-INFO: [BIND 205-101] Exploring resource sharing.
-INFO: [BIND 205-101] Binding ...
-INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 0.455 seconds; current allocated memory: 451.634 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'dwt1D'
-INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SYN 201-210] Renamed object name 'dwt3D_fptrunc_64ns_32_1_1' to 'dwt3D_fptrunc_64nbkb' due to the length limit 20
 INFO: [SYN 201-210] Renamed object name 'dwt3D_fpext_32ns_64_1_1' to 'dwt3D_fpext_32ns_cud' due to the length limit 20
 INFO: [SYN 201-210] Renamed object name 'dwt3D_dadddsub_64ns_64ns_64_5_full_dsp_1' to 'dwt3D_dadddsub_64dEe' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'dwt3D_dmul_64ns_64ns_64_5_max_dsp_1' to 'dwt3D_dmul_64ns_6eOg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'dwt3D_dsub_64ns_64ns_64_5_full_dsp_1' to 'dwt3D_dsub_64ns_6eOg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'dwt3D_dmul_64ns_64ns_64_6_max_dsp_1' to 'dwt3D_dmul_64ns_6fYi' due to the length limit 20
 INFO: [RTGEN 206-100] Generating core module 'dwt3D_dadddsub_64dEe': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'dwt3D_dmul_64ns_6eOg': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'dwt3D_fpext_32ns_cud': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'dwt3D_fptrunc_64nbkb': 1 instance(s).
-INFO: [RTGEN 206-100] Finished creating RTL model for 'dwt1D'.
-INFO: [HLS 200-111]  Elapsed time: 0.718 seconds; current allocated memory: 452.265 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'Block_proc21'
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [SYN 201-210] Renamed object name 'Block_proc21_p_temp_data3D' to 'Block_proc21_p_tefYi' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'Block_proc21_p_z_data1D' to 'Block_proc21_p_z_g8j' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'Block_proc21_p_y_data1D' to 'Block_proc21_p_y_hbi' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'Block_proc21_p_x_data1D' to 'Block_proc21_p_x_ibs' due to the length limit 20
-WARNING: [RTGEN 206-101] Setting dangling out port 'Block_proc21/in_r_WEN_B' to 0.
-WARNING: [RTGEN 206-101] Setting dangling out port 'Block_proc21/in_r_Din_B' to 0.
-INFO: [RTGEN 206-100] Finished creating RTL model for 'Block_proc21'.
-INFO: [HLS 200-111]  Elapsed time: 1.118 seconds; current allocated memory: 454.307 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'dwt3D'
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [RTGEN 206-500] Setting interface mode on port 'dwt3D/in_r' to 'bram'.
-INFO: [RTGEN 206-500] Setting interface mode on function 'dwt3D' to 's_axilite & ap_ctrl_hs'.
-INFO: [RTGEN 206-100] Bundling port 'return' to AXI-Lite port dwt_io.
+INFO: [RTGEN 206-100] Generating core module 'dwt3D_dmul_64ns_6fYi': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dwt3D_dsub_64ns_6eOg': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dwt3D_fpext_32ns_cud': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dwt3D_fptrunc_64nbkb': 2 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'dwt3D'.
-INFO: [HLS 200-111]  Elapsed time: 2.042 seconds; current allocated memory: 454.942 MB.
-INFO: [RTMG 210-278] Implementing memory 'dwt1D_temp_ram (RAM)' using distributed RAMs.
-INFO: [RTMG 210-278] Implementing memory 'Block_proc21_p_tefYi_ram (RAM)' using block RAMs.
-INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:27 ; elapsed = 00:01:27 . Memory (MB): peak = 538.707 ; gain = 483.004
+INFO: [HLS 200-111]  Elapsed time: 0.838 seconds; current allocated memory: 91.248 MB.
+INFO: [RTMG 210-278] Implementing memory 'dwt3D_p_temp_data3D_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'dwt3D_tmp_ram (RAM)' using block RAMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:15 ; elapsed = 00:01:24 . Memory (MB): peak = 151.973 ; gain = 96.457
 INFO: [SYSC 207-301] Generating SystemC RTL for dwt3D.
 INFO: [VHDL 208-304] Generating VHDL RTL for dwt3D.
 INFO: [VLOG 209-307] Generating Verilog RTL for dwt3D.
-INFO: [HLS 200-112] Total elapsed time: 87.619 seconds; peak allocated memory: 454.942 MB.
-INFO: [Common 17-206] Exiting vivado_hls at Sun Aug 25 21:18:21 2019...
+INFO: [HLS 200-112] Total elapsed time: 84.352 seconds; peak allocated memory: 91.248 MB.
+INFO: [Common 17-206] Exiting vivado_hls at Wed Aug 28 09:10:52 2019...
