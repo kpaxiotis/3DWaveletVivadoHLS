@@ -30,8 +30,7 @@ void dwt3D(float in[1536]){
 #pragma HLS INTERFACE bram port = in
 
     
-    int iterations = 2;
-    
+   
 //Internal image buffers
 #ifndef __SYNTHESIS__
     image_t *temp = (image_t *)malloc(sizeof(image_t));
@@ -51,23 +50,16 @@ void dwt3D(float in[1536]){
     int i, j, k, n, l, h, m, x_size, y_size, z_size;
     float tmp[MAX_SIZE];
 
-    temp->x_size = in[0];
-    temp->y_size = in[1];
-    temp->z_size = in[2];
-
-    
+  
     
     l = 3;
     
     IN_I_LOOP:
-    for( i = 0; i < temp->x_size; i++){    
-        #pragma HLS loop_tripcount min=4 max=128
+    for( i = 0; i < 4; i++){    
         IN_J_LOOP:
-        for(j = 0; j < temp->y_size; j++){
-        #pragma HLS loop_tripcount min=4 max=128
+        for(j = 0; j < 4; j++){
             IN_K_LOOP:
-            for(k = 0; k < temp->z_size; k++){
-            #pragma HLS loop_tripcount min=4 max=128
+            for(k = 0; k < 24; k++){
                 
                 temp->data3D[i][j][k] = in[l];
                 l++;
@@ -77,8 +69,7 @@ void dwt3D(float in[1536]){
     }
 
     DWT_LEVEL_LOOP:
-    for(n = 0; n < iterations; n++){
-        #pragma HLS loop_tripcount min=1 max=2
+    for(n = 0; n < 2; n++){
         
         int sub = 1 << n;
 
@@ -87,8 +78,9 @@ void dwt3D(float in[1536]){
         x_size = temp->x_size / sub;
         y_size = temp->y_size / sub;
 		z_size = temp->z_size / sub;
-
-        h = x_size / 2;
+        
+        
+        h = x_size;
         X_J_LOOP:
         for ( j = 4 - 1; j >= 0; j--){
             X_K_LOOP:
@@ -97,7 +89,7 @@ void dwt3D(float in[1536]){
                 for ( i = 2 - 1 ; i >= 0; i--){
                     m = i*2; //data_size << 1;
                     tmp[i] = temp->data3D[m][j][k]*0.5*1.41421356 + temp->data3D[m+1][j][k]*0.5*1.41421356;
-                    tmp[i+h] = temp->data3D[m][j][k]*0.5*1.41421356 - temp->data3D[m+1][j][k]*0.5*1.41421356;
+                    tmp[i+2] = temp->data3D[m][j][k]*0.5*1.41421356 - temp->data3D[m+1][j][k]*0.5*1.41421356;
                     
                 }
                 I_I_LOOP:
@@ -153,14 +145,11 @@ void dwt3D(float in[1536]){
     l = 3;
     
     OUT_I_LOOP:
-    for( i = 0; i < temp->x_size; i++){    
-    #pragma HLS loop_tripcount min=4 max=128
+    for( i = 0; i < 4; i++){    
         OUT_J_LOOP:
-        for(j = 0; j < temp->y_size; j++){
-        #pragma HLS loop_tripcount min=4 max=128
+        for(j = 0; j < 4; j++){
             OUT_K_LOOP:
-            for(k = 0; k < temp->z_size; k++){
-            #pragma HLS loop_tripcount min=4 max=128
+            for(k = 0; k < 24; k++){
                 
                 in[l] = temp->data3D[i][j][k];
                 l++;
