@@ -8,7 +8,7 @@ latency_avg = []
 sol_list = []
 
 
-for i in range(1, 8):
+for i in range(1, 10):
     directory = "dwt_prj" + str(i) + "/solution1/solution1_data.json"
     with open(directory) as f:
         data = json.load(f)

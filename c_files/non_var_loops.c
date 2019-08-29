@@ -61,13 +61,10 @@ void dwt3D(float in[1536]){
     
     IN_I_LOOP:
     for( i = 0; i < 4; i++){    
-        #pragma HLS loop_tripcount min=4 max=128
         IN_J_LOOP:
         for(j = 0; j < 4; j++){
-        #pragma HLS loop_tripcount min=4 max=128
             IN_K_LOOP:
             for(k = 0; k < 24; k++){
-            #pragma HLS loop_tripcount min=4 max=128
                 
                 temp->data3D[i][j][k] = in[l];
                 l++;
@@ -89,13 +86,10 @@ void dwt3D(float in[1536]){
     h = x_size / 2;
     X_J_LOOP:
     for ( j = 4 - 1; j >= 0; j--){
-    #pragma HLS loop_tripcount min=4 max=128
         X_K_LOOP:
         for ( k = 24 - 1; k >= 0; k--){
-        #pragma HLS loop_tripcount min=4 max=128
             X_I_LOOP:
             for ( i = 2 - 1 ; i >= 0; i--){
-            #pragma HLS loop_tripcount min=4 max=128
                 //printf("in = %f\n%f\n%f\n%f\n", temp->data3D[0][j][k], temp->data3D[1][j][k], temp->data3D[2][j][k], temp->data3D[3][j][k]);
                 m = i*2; //data_size << 1;
                 tmp[i] = temp->data3D[m][j][k]*0.5*1.41421356 + temp->data3D[m+1][j][k]*0.5*1.41421356;
@@ -105,7 +99,6 @@ void dwt3D(float in[1536]){
             }
             I_I_LOOP:
             for ( i = 4 - 1; i >= 0; i--){
-            #pragma HLS loop_tripcount min=4 max=128
                 temp->data3D[i][j][k] = tmp[i];
             }
         }
@@ -116,13 +109,10 @@ void dwt3D(float in[1536]){
     h = y_size / 2;
     Y_K_LOOP:
     for ( k = 24 - 1; k >= 0; k--){
-    #pragma HLS loop_tripcount min=4 max=128
         Y_I_LOOP:
         for ( i = 4 - 1; i >= 0; i--){
-        #pragma HLS loop_tripcount min=4 max=128
             Y_J_LOOP:
             for ( j = 2 - 1 ; j >= 0; j--){
-            #pragma HLS loop_tripcount min=4 max=128
             
                 m = j*2; //data_size << 1;
                 tmp[j] = temp->data3D[i][m][k]*0.5*1.41421356 + temp->data3D[i][m+1][k]*0.5*1.41421356;
@@ -131,7 +121,6 @@ void dwt3D(float in[1536]){
             }
             J_J_LOOP:
             for ( j = 4 - 1; j >= 0; j--){
-            #pragma HLS loop_tripcount min=4 max=128
                 temp->data3D[i][j][k] = tmp[j];
             }                
         }    
@@ -141,13 +130,10 @@ void dwt3D(float in[1536]){
     h = z_size / 2;
     Z_I_LOOP:
     for( i = 4 - 1; i >= 0; i--){    
-    #pragma HLS loop_tripcount min=4 max=128
         Z_J_LOOP:
         for(j = 4 - 1; j >= 0; j--){
-        #pragma HLS loop_tripcount min=4 max=128
             Z_K_LOOP:
             for(k = 12 - 1 ; k >= 0; k--){
-            #pragma HLS loop_tripcount min=4 max=128
                                    
                m = k*2; //data_size << 1;
                 tmp[k] = temp->data3D[i][j][m]*0.5*1.41421356 + temp->data3D[i][j][m+1]*0.5*1.41421356;
@@ -156,7 +142,6 @@ void dwt3D(float in[1536]){
             }
             K_K_LOOP:
             for ( k = 24 - 1; k >= 0; k--){
-            #pragma HLS loop_tripcount min=4 max=128
                 temp->data3D[i][j][k] = tmp[k];
             }
         }    
@@ -165,13 +150,10 @@ void dwt3D(float in[1536]){
     
     X_J_LOOP2:
     for ( j = 2 - 1; j >= 0; j--){
-    #pragma HLS loop_tripcount min=4 max=128
         X_K_LOOP2:
         for ( k = 12 - 1; k >= 0; k--){
-        #pragma HLS loop_tripcount min=4 max=128
             X_I_LOOP2:
             for ( i = 1 - 1 ; i >= 0; i--){
-            #pragma HLS loop_tripcount min=4 max=128
                 //printf("in = %f\n%f\n%f\n%f\n", temp->data3D[0][j][k], temp->data3D[1][j][k], temp->data3D[2][j][k], temp->data3D[3][j][k]);
                 m = i*2; //data_size << 1;
                 tmp[i] = temp->data3D[m][j][k]*0.5*1.41421356 + temp->data3D[m+1][j][k]*0.5*1.41421356;
@@ -181,7 +163,6 @@ void dwt3D(float in[1536]){
             }
             I_I_LOOP2:
             for ( i = 2 - 1; i >= 0; i--){
-            #pragma HLS loop_tripcount min=4 max=128
                 temp->data3D[i][j][k] = tmp[i];
             }
         }
@@ -192,13 +173,10 @@ void dwt3D(float in[1536]){
     h = y_size / 2;
     Y_K_LOOP2:
     for ( k = 12 - 1; k >= 0; k--){
-    #pragma HLS loop_tripcount min=4 max=128
         Y_I_LOOP2:
         for ( i = 2 - 1; i >= 0; i--){
-        #pragma HLS loop_tripcount min=4 max=128
             Y_J_LOOP2:
             for ( j = 1 - 1 ; j >= 0; j--){
-            #pragma HLS loop_tripcount min=4 max=128
             
                 m = j*2; //data_size << 1;
                 tmp[j] = temp->data3D[i][m][k]*0.5*1.41421356 + temp->data3D[i][m+1][k]*0.5*1.41421356;
@@ -207,7 +185,6 @@ void dwt3D(float in[1536]){
             }
             J_J_LOOP2:
             for ( j = 2 - 1; j >= 0; j--){
-            #pragma HLS loop_tripcount min=4 max=128
                 temp->data3D[i][j][k] = tmp[j];
             }                
         }    
@@ -217,13 +194,10 @@ void dwt3D(float in[1536]){
     h = z_size / 2;
     Z_I_LOOP2:
     for( i = 2 - 1; i >= 0; i--){    
-    #pragma HLS loop_tripcount min=4 max=128
         Z_J_LOOP2:
         for(j = 2 - 1; j >= 0; j--){
-        #pragma HLS loop_tripcount min=4 max=128
             Z_K_LOOP2:
             for(k = 6 - 1 ; k >= 0; k--){
-            #pragma HLS loop_tripcount min=4 max=128
                                    
                m = k*2; //data_size << 1;
                 tmp[k] = temp->data3D[i][j][m]*0.5*1.41421356 + temp->data3D[i][j][m+1]*0.5*1.41421356;
@@ -232,7 +206,6 @@ void dwt3D(float in[1536]){
             }
             K_K_LOOP2:
             for ( k = 12 - 1; k >= 0; k--){
-            #pragma HLS loop_tripcount min=4 max=128
                 temp->data3D[i][j][k] = tmp[k];
             }
         }    
@@ -242,13 +215,10 @@ void dwt3D(float in[1536]){
     
     OUT_I_LOOP:
     for( i = 0; i < 4; i++){    
-    #pragma HLS loop_tripcount min=4 max=128
         OUT_J_LOOP:
         for(j = 0; j < 4; j++){
-        #pragma HLS loop_tripcount min=4 max=128
             OUT_K_LOOP:
             for(k = 0; k < 24; k++){
-            #pragma HLS loop_tripcount min=4 max=128
                 
                 in[l] = temp->data3D[i][j][k];
                 l++;
