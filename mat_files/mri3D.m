@@ -1,6 +1,7 @@
-load wmri
+%load wmri
+clear;
 
-gold = importdata('out.gold.dat','\n');
+gold = importdata('out.dat','\n');
 count = 1;
 for i = 1:128
     for j = 1:128
@@ -13,7 +14,7 @@ for i = 1:128
     end
 end
 
-
+map = pink(140);
 figure('DefaultAxesXTick',[],'DefaultAxesYTick',[],...
         'DefaultAxesFontSize',8,'Color','w')
 XR = X;
