@@ -1,11 +1,12 @@
 %load wmri
 clear;
 
-gold = importdata('out.dat','\n');
-count = 1;
+gold = importdata('outfull.dat','\n');
+count = 3;
 for i = 1:128
     for j = 1:128
-        for k = 1:24       
+        for k = 1:24      
+              
             
             X(i,j,k) = gold(count);
             count = count + 1;
@@ -32,7 +33,7 @@ hcap.AmbientStrength = .6;
 hiso.SpecularColorReflectance = 0;
 hiso.SpecularExponent = 50;
 ax = gca;
-ax.View = [215,30];
+ax.View = [315,30];%[215,30]
 ax.Box = 'On';
 axis tight
-title('Original Data');
+%title('Original Data');
