@@ -2,7 +2,7 @@
 clear;
 
 gold = importdata('outfull.dat','\n');
-count = 3;
+count = 1;
 for i = 1:128
     for j = 1:128
         for k = 1:24      
