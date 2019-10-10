@@ -9,7 +9,7 @@ void dwt1D(array_t *data){
     int i = 0;
     
     for ( i = 0; i <h; i++){
-    #pragma HLS loop_tripcount min=2 max=125
+    #pragma HLS loop_tripcount min=2 max=12
         
         int k = i*2; //data_size << 1;
         temp[i] = data->data1D[k]*0.5*1.41421356 + data->data1D[k + 1]*0.5*1.41421356;
@@ -18,13 +18,13 @@ void dwt1D(array_t *data){
     }
     
     for ( i = 0; i < data->size; i++)
-    #pragma HLS loop_tripcount min=50 max=200
+    #pragma HLS loop_tripcount min=4 max=24
         data->data1D[i] = temp[i];
 
 }
 
 
-void dwt3D(float in[1536]){
+void dwt3D(float in[13.824]){
 #pragma HLS INTERFACE bram port=in
 
 int iterations = 2;
@@ -58,13 +58,13 @@ int iterations = 2;
     
     IN_I_LOOP:
     for( i = 0; i < temp->x_size; i++){    
-        #pragma HLS loop_tripcount min=4 max=128
+        #pragma HLS loop_tripcount min=4 max=24
         IN_J_LOOP:
         for(j = 0; j < temp->y_size; j++){
-        #pragma HLS loop_tripcount min=4 max=128
+        #pragma HLS loop_tripcount min=4 max=24
             IN_K_LOOP:
             for(k = 0; k < temp->z_size; k++){
-            #pragma HLS loop_tripcount min=4 max=128
+            #pragma HLS loop_tripcount min=4 max=24
                 
                 temp->data3D[i][j][k] = in[l];
                 l++;
@@ -87,36 +87,36 @@ int iterations = 2;
 
         
         for ( j = 0; j < y->size; j++){
-        #pragma HLS loop_tripcount min=4 max=128
+        #pragma HLS loop_tripcount min=4 max=24
             for ( k = 0; k < z->size; k++){
-            #pragma HLS loop_tripcount min=4 max=128
+            #pragma HLS loop_tripcount min=4 max=24
                 for ( i = 0; i < x->size; i++)
-                #pragma HLS loop_tripcount min=4 max=128
+                #pragma HLS loop_tripcount min=4 max=24
                                        
                     x->data1D[i] = temp->data3D[i][j][k];
                     
                 dwt1D(x);
                 
                 for ( i = 0; i < x->size; i++)
-                #pragma HLS loop_tripcount min=4 max=128
+                #pragma HLS loop_tripcount min=4 max=24
                     temp->data3D[i][j][k] = x->data1D[i];
                 
             }    
         }
         
         for ( k = 0; k < z->size; k++){
-        #pragma HLS loop_tripcount min=4 max=128
+        #pragma HLS loop_tripcount min=4 max=24
             for ( i = 0; i < x->size; i++){
-            #pragma HLS loop_tripcount min=4 max=128
+            #pragma HLS loop_tripcount min=4 max=24
                 dwt3D_label1:for ( j = 0; j < y->size; j++)
-                #pragma HLS loop_tripcount min=4 max=128
+                #pragma HLS loop_tripcount min=4 max=24
             
                     y->data1D[j] = temp->data3D[i][j][k];
 
                 dwt1D(y);
             
                 for ( j = 0; j < y->size; j++)
-                #pragma HLS loop_tripcount min=4 max=128
+                #pragma HLS loop_tripcount min=4 max=24
                     temp->data3D[i][j][k] = y->data1D[j];
                 
             }    
@@ -124,18 +124,18 @@ int iterations = 2;
         
         
         for( i = 0; i < x->size; i++){    
-        #pragma HLS loop_tripcount min=4 max=128
+        #pragma HLS loop_tripcount min=4 max=24
             for(j = 0; j < y->size; j++){
-            #pragma HLS loop_tripcount min=4 max=128
+            #pragma HLS loop_tripcount min=4 max=24
                 dwt3D_label0:for(k = 0; k < z->size; k++)
-                #pragma HLS loop_tripcount min=4 max=128                    
+                #pragma HLS loop_tripcount min=4 max=24                    
                     
                 	z->data1D[k] = temp->data3D[i][j][k];
                         
                 dwt1D(z);
                     
                 for ( k = 0; k < z->size; k++)
-                #pragma HLS loop_tripcount min=4 max=128
+                #pragma HLS loop_tripcount min=4 max=24
                     temp->data3D[i][j][k] = z->data1D[k];
                     
             }    
@@ -147,13 +147,13 @@ int iterations = 2;
     
     OUT_I_LOOP:
     for( i = 0; i < temp->x_size; i++){    
-    #pragma HLS loop_tripcount min=4 max=128
+    #pragma HLS loop_tripcount min=4 max=24
         OUT_J_LOOP:
         for(j = 0; j < temp->y_size; j++){
-        #pragma HLS loop_tripcount min=4 max=128
+        #pragma HLS loop_tripcount min=4 max=24
             OUT_K_LOOP:
             for(k = 0; k < temp->z_size; k++){
-            #pragma HLS loop_tripcount min=4 max=128
+            #pragma HLS loop_tripcount min=4 max=24
                 
                 in[l] = temp->data3D[i][j][k];
                 l++;
