@@ -26,7 +26,7 @@ void dwt1D(array_t *data){
 }
 
 
-void dwt3D(float in[13.824]){
+void dwt3D(float in[13824]){
 #pragma HLS INTERFACE bram port = in
 
     

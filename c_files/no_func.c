@@ -26,7 +26,7 @@
 // }
 
 
-void dwt3D(float in[1536]){
+void dwt3D(float in[13824]){
 #pragma HLS INTERFACE bram port = in
 
     
