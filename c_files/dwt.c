@@ -24,9 +24,10 @@ void dwt1D(array_t *data){
 }
 
 
-void dwt3D(image_t *in, int iterations){
-#pragma HLS INTERFACE bram port=in->data3D
+void dwt3D(float in[1536]){
+#pragma HLS INTERFACE bram port=in
 
+int iterations = 2;
 
 //Internal image buffers
 #ifndef __SYNTHESIS__
@@ -43,23 +44,30 @@ void dwt3D(image_t *in, int iterations){
     array_t *z = &_z;
 #endif
 
-
-    int i, j, k, n;
+    
+    int i, j, k, n, l;
     
 
-    temp->x_size = in->x_size;
-    temp->y_size = in->y_size;
-    temp->z_size = in->z_size;
+    temp->x_size = in[0];
+    temp->y_size = in[1];
+    temp->z_size = in[2];
 
     
-    for( i = 0; i < in->x_size; i++){    
+    
+    l = 3;
+    
+    IN_I_LOOP:
+    for( i = 0; i < temp->x_size; i++){    
         #pragma HLS loop_tripcount min=4 max=128
-        for(j = 0; j < in->y_size; j++){
+        IN_J_LOOP:
+        for(j = 0; j < temp->y_size; j++){
         #pragma HLS loop_tripcount min=4 max=128
-            for(k = 0; k < in->z_size; k++){
+            IN_K_LOOP:
+            for(k = 0; k < temp->z_size; k++){
             #pragma HLS loop_tripcount min=4 max=128
                 
-                temp->data3D[i][j][k] = in->data3D[i][j][k];
+                temp->data3D[i][j][k] = in[l];
+                l++;
                     
             }
         }
@@ -135,14 +143,20 @@ void dwt3D(image_t *in, int iterations){
     
     }
     
-    for( i = 0; i < in->x_size; i++){    
+    l = 3;
+    
+    OUT_I_LOOP:
+    for( i = 0; i < temp->x_size; i++){    
     #pragma HLS loop_tripcount min=4 max=128
-        for(j = 0; j < in->y_size; j++){
+        OUT_J_LOOP:
+        for(j = 0; j < temp->y_size; j++){
         #pragma HLS loop_tripcount min=4 max=128
-            for(k = 0; k < in->z_size; k++){
+            OUT_K_LOOP:
+            for(k = 0; k < temp->z_size; k++){
             #pragma HLS loop_tripcount min=4 max=128
                 
-                in->data3D[i][j][k] = temp->data3D[i][j][k];
+                in[l] = temp->data3D[i][j][k];
+                l++;
                     
             }
         }

@@ -6,14 +6,14 @@
 
 
 typedef struct {
-	int x_size;
-	int y_size;
-	int z_size;
+	float x_size;
+	float y_size;
+	float z_size;
 	float data3D[MAX_SIZE][MAX_SIZE][MAX_SIZE];
 }image_t;
 
 typedef struct {
-	int size;
+	float size;
 	float data1D[MAX_SIZE];
 }array_t;
 
