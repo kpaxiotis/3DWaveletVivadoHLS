@@ -29,6 +29,22 @@ c_files/dwt_prj8
 
 c_files/dwt_prj9
 c_files/vivado_hls.log
+c_files/makefile
+c_files/dwt.o
+c_files/dwt.exe
+c_files/inverse.o
+c_files/inverse.exe
+c_files/interchange.o
+c_files/interchange.exe
+c_files/col_accessing.o
+c_files/col_accessing.exe
+c_files/non_var_loops.o
+c_files/non_var_loops.exe
+c_files/no_func.o
+c_files/no_func.exe
+c_files/single_sub_loops.o
+c_files/single_sub_loops.exe
+
 
 c_files/1dwt_all.tcl
 
