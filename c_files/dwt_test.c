@@ -23,7 +23,7 @@
 int main(){
 
 	//image_t *img_3D = (image_t*)malloc(sizeof(image_t));
-    float img_3D[1536];
+    float img_3D[13824];
     
     char dir_in[200], dir_dim[200], dir_out[200], dir_out_gold[200], comp_str[400];
     

@@ -23,43 +23,44 @@
 int main(){
 
 	//image_t *img_3D = (image_t*)malloc(sizeof(image_t));
-    float img_3D[1536];
+    float img_3D[13824];
     
     char dir_in[200], dir_dim[200], dir_out[200], dir_out_gold[200], comp_str[400];
     
 	/*int x_size, y_size, z_size;
 	float data3D[X_SIZE][Y_SIZE][Z_SIZE];*/
 
+    for (int i = 4; i <= 128; i+=4){ 
+        directoryDim(dir_dim, i, i);
+        
+        for (int n = 1; n <= 10; n++){
+            directoryIn(dir_in, dir_dim, n);
+            directoryOut(dir_out, dir_dim, n);
+            directoryOutGold(dir_out_gold, dir_dim, n);
+            
+            imageRead(img_3D, dir_in);
+            
+            dwt3D(img_3D);    
+            
+            printToFile(img_3D, dir_out);
+            
+            compStr(dir_out, dir_out_gold, comp_str);
+            
+            if (system(comp_str)) {
 
-    directoryDim(dir_dim, 4, 4);
-    
-    for (int n = 1; n <= 10; n++){
-        directoryIn(dir_in, dir_dim, n);
-        directoryOut(dir_out, dir_dim, n);
-        directoryOutGold(dir_out_gold, dir_dim, n);
-        
-        imageRead(img_3D, dir_in);
-        
-        dwt3D(img_3D);    
-        
-        printToFile(img_3D, dir_out);
-        
-        compStr(dir_out, dir_out_gold, comp_str);
-        
-        if (system(comp_str)) {
+                fprintf(stdout, "*******************************************\n");
+                fprintf(stdout, "FAIL: Output DOES NOT match the golden output\n");
+                fprintf(stdout, "*******************************************\n");
+                 return 1;
+          } else {
+                fprintf(stdout, "*******************************************\n");
+                fprintf(stdout, "PASS: The output matches the golden output!\n");
+                fprintf(stdout, "*******************************************\n");
+                //return 0;
+          }
+            
 
-            fprintf(stdout, "*******************************************\n");
-            fprintf(stdout, "FAIL: Output DOES NOT match the golden output\n");
-            fprintf(stdout, "*******************************************\n");
-             return 1;
-      } else {
-            fprintf(stdout, "*******************************************\n");
-            fprintf(stdout, "PASS: The output matches the golden output!\n");
-            fprintf(stdout, "*******************************************\n");
-            //return 0;
-      }
-        
-
+        }
     }
     
     /*printf ("Comparing against output data \n");
