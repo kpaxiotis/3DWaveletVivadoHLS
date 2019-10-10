@@ -26,10 +26,12 @@ void dwt1D(array_t *data){
 }
 
 
-void dwt3D(image_t *in, int iterations){
-#pragma HLS INTERFACE bram port=in->data3D
+void dwt3D(float in[1536]){
+#pragma HLS INTERFACE bram port = in
 
-
+    
+    int iterations = 2;
+    
 //Internal image buffers
 #ifndef __SYNTHESIS__
     image_t *temp = (image_t *)malloc(sizeof(image_t));
@@ -46,29 +48,34 @@ void dwt3D(image_t *in, int iterations){
 #endif
 
 
-    int i, j, k, n;
+    int i, j, k, n, l;
     
 
-    temp->x_size = in->x_size;
-    temp->y_size = in->y_size;
-    temp->z_size = in->z_size;
+    temp->x_size = in[0];
+    temp->y_size = in[1];
+    temp->z_size = in[2];
 
+    
+    
+    l = 3;
     
     IN_I_LOOP:
-    for( i = 0; i < in->x_size; i++){    
+    for( i = 0; i < temp->x_size; i++){    
         #pragma HLS loop_tripcount min=4 max=128
         IN_J_LOOP:
-        for(j = 0; j < in->y_size; j++){
+        for(j = 0; j < temp->y_size; j++){
         #pragma HLS loop_tripcount min=4 max=128
             IN_K_LOOP:
-            for(k = 0; k < in->z_size; k++){
+            for(k = 0; k < temp->z_size; k++){
             #pragma HLS loop_tripcount min=4 max=128
                 
-                temp->data3D[k][j][i] = in->data3D[k][j][i];
+                temp->data3D[i][j][k] = in[l];
+                l++;
                     
             }
         }
     }
+    
         
     DWT_LEVEL_LOOP:
     for(n = 0; n < iterations; n++){
@@ -78,9 +85,9 @@ void dwt3D(image_t *in, int iterations){
 
 
 
-        x->size = in->x_size / sub;
-        y->size = in->y_size / sub;
-		z->size = in->z_size / sub;
+        x->size = temp->x_size / sub;
+        y->size = temp->y_size / sub;
+		z->size = temp->z_size / sub;
 
         
         X_J_LOOP:
@@ -150,17 +157,21 @@ void dwt3D(image_t *in, int iterations){
             }    
         }    
     }
+ 
+    l = 3;
+    
     OUT_I_LOOP:
-    for( i = 0; i < x->size; i++){    
+    for( i = 0; i < temp->x_size; i++){    
     #pragma HLS loop_tripcount min=4 max=128
         OUT_J_LOOP:
-        for(j = 0; j < y->size; j++){
+        for(j = 0; j < temp->y_size; j++){
         #pragma HLS loop_tripcount min=4 max=128
             OUT_K_LOOP:
-            for(k = 0; k < z->size; k++){
+            for(k = 0; k < temp->z_size; k++){
             #pragma HLS loop_tripcount min=4 max=128
                 
-                in->data3D[k][j][i] = temp->data3D[k][j][i];
+                in[l] = temp->data3D[i][j][k];
+                l++;
                     
             }
         }
