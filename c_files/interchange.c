@@ -113,7 +113,7 @@ void dwt3D(float in[13824]){
         Y_I_LOOP:
         for ( i = 0; i < x->size; i++){
         #pragma HLS loop_tripcount min=4 max=24            
-            Y_K_LOO:
+            Y_K_LOOP:
             for ( k = 0; k < z->size; k++){
             #pragma HLS loop_tripcount min=4 max=24
                 Y_J_LOOP:

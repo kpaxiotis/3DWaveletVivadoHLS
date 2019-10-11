@@ -1,14 +1,15 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-
+prj = [2, 5]
 num_of_prj = 4
 sol_list = []
 power = []
 
-for i in range(1, num_of_prj):
+# for i in range(1, num_of_prj):
+for i in prj:
 
-    directory = "C:/vThesis/c_files/dwt_prj" + str(i) + "/solution1/project1/project1.runs/impl_1/design_1_wrapper_power_routed.rpt"
+    directory = "C:/thesisRepo/c_files/dwt_prj" + str(i) + "/solution1/project1/project1.runs/impl_1/design_1_wrapper_power_routed.rpt"
     sol_list.append("sol" + str(i))
     
     
