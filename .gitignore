@@ -54,6 +54,7 @@ c_files/dwt_prj20
 
 c_files/vivado_hls.log
 c_files/makefile
+c_files/dwt_all.tcl
 c_files/dwt_test_1.o
 c_files/dwt_test_1.c
 c_files/dwt_test.o
