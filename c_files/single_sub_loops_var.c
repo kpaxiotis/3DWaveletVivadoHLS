@@ -95,12 +95,13 @@ void dwt3D(float in[13824]){
             X_K_LOOP:
             for ( k = x_size - 1; k >= 0; k--){
                 X_I_LOOP:
-                for ( i = x_size - 1 ; i >= 0; i -= 2){
+                for ( i = x_size - 1 ; i >= 0; i --){
                     
-                    m = i/2; //data_size << 1;
-                    temp2->data3D[m][j][k] = temp1->data3D[i][j][k]*0.5*1.41421356 + temp1->data3D[i+1][j][k]*0.5*1.41421356;
-                    temp2->data3D[m+x_size/2][j][k] = temp1->data3D[i][j][k]*0.5*1.41421356 - temp1->data3D[i+1][j][k]*0.5*1.41421356;
-                    
+                    m = i*2; //data_size << 1;
+                    if (i < x_size/2){
+                    temp2->data3D[i][j][k] = temp1->data3D[m][j][k]*0.5*1.41421356 + temp1->data3D[m+1][j][k]*0.5*1.41421356;
+                    temp2->data3D[i+x_size/2][j][k] = temp1->data3D[m][j][k]*0.5*1.41421356 - temp1->data3D[m+1][j][k]*0.5*1.41421356;
+                    }
                 }
             }
         }
@@ -110,12 +111,13 @@ void dwt3D(float in[13824]){
             Y_I_LOOP:
             for ( i = x_size - 1; i >= 0; i--){
                 Y_J_LOOP:
-                for ( j = x_size - 1 ; j >= 0; j -= 2){
+                for ( j = x_size - 1 ; j >= 0; j --){
                 
-                    m = j/2; //data_size << 1;
-                    temp1->data3D[i][m][k] = temp2->data3D[i][j][k]*0.5*1.41421356 + temp2->data3D[i][j+1][k]*0.5*1.41421356;
-                    temp1->data3D[i][m+y_size/2][k] = temp2->data3D[i][j][k]*0.5*1.41421356 - temp2->data3D[i][j+1][k]*0.5*1.41421356;
-                    
+                    m = j*2; //data_size << 1;
+                    if (j < x_size/2){
+                    temp1->data3D[i][j][k] = temp2->data3D[i][m][k]*0.5*1.41421356 + temp2->data3D[i][m+1][k]*0.5*1.41421356;
+                    temp1->data3D[i][j+y_size/2][k] = temp2->data3D[i][m][k]*0.5*1.41421356 - temp2->data3D[i][m+1][k]*0.5*1.41421356;
+                    }
                 }             
             }    
         }
@@ -126,12 +128,13 @@ void dwt3D(float in[13824]){
             Z_J_LOOP:
             for(j = x_size - 1; j >= 0; j--){
                 Z_K_LOOP:
-                for(k = x_size - 1 ; k >= 0; k -= 2){
+                for(k = x_size - 1 ; k >= 0; k--){
                
-                    m = k/2; //data_size << 1;
-                    temp2->data3D[i][j][m] = temp1->data3D[i][j][k]*0.5*1.41421356 + temp1->data3D[i][j][k+1]*0.5*1.41421356;
-                    temp2->data3D[i][j][m+z_size/2] = temp1->data3D[i][j][k]*0.5*1.41421356 - temp1->data3D[i][j][k+1]*0.5*1.41421356;
-                    
+                    m = k*2; //data_size << 1;
+                    if (k < x_size/2){
+                    temp2->data3D[i][j][k] = temp1->data3D[i][j][m]*0.5*1.41421356 + temp1->data3D[i][j][m+1]*0.5*1.41421356;
+                    temp2->data3D[i][j][k+z_size/2] = temp1->data3D[i][j][m]*0.5*1.41421356 - temp1->data3D[i][j][m+1]*0.5*1.41421356;
+                    }
                 }
             }    
         }

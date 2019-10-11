@@ -30,8 +30,8 @@ c_files/dwt_prj8
 c_files/dwt_prj9
 c_files/vivado_hls.log
 c_files/makefile
-c_files/dwt_tes_1.o
-c_files/dwt_tes_1.c
+c_files/dwt_test_1.o
+c_files/dwt_test_1.c
 c_files/dwt.o
 c_files/dwt.exe
 c_files/inverse.o
