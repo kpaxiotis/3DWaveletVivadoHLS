@@ -44,6 +44,8 @@ c_files/no_func.o
 c_files/no_func.exe
 c_files/single_sub_loops.o
 c_files/single_sub_loops.exe
+c_files/single_sub_loops_var.o
+c_files/single_sub_loops_var.exe
 
 
 c_files/1dwt_all.tcl
