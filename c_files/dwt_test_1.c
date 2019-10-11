@@ -30,7 +30,7 @@ int main(){
 	/*int x_size, y_size, z_size;
 	float data3D[X_SIZE][Y_SIZE][Z_SIZE];*/
 
-    for (int i = 4; i <= 128; i+=4){ 
+    for (int i = 24; i <= 24; i+=4){ 
         directoryDim(dir_dim, i, i);
         
         for (int n = 1; n <= 10; n++){
