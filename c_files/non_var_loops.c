@@ -35,16 +35,16 @@ void dwt3D(float in[1536]){
 //Internal image buffers
 #ifndef __SYNTHESIS__
     image_t *temp = (image_t *)malloc(sizeof(image_t));
-    // array_t *x = (array_t *)malloc(sizeof(array_t));
-    // array_t *y = (array_t *)malloc(sizeof(array_t));
-    // array_t *z = (array_t *)malloc(sizeof(array_t));
+    array_t *x = (array_t *)malloc(sizeof(array_t));
+    array_t *y = (array_t *)malloc(sizeof(array_t));
+    array_t *z = (array_t *)malloc(sizeof(array_t));
 #else
 	image_t _temp;
 	image_t *temp = &_temp;
-    // array_t _x, _y, _z;
-    // array_t *x = &_x;
-    // array_t *y = &_y;
-    // array_t *z = &_z;
+    array_t _x, _y, _z;
+    array_t *x = &_x;
+    array_t *y = &_y;
+    array_t *z = &_z;
 #endif
 
 

@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-prj = [2, 5]
+prj = [2, 5, 8, 12, 14]
 num_of_prj = 4
 sol_list = []
 power = []
